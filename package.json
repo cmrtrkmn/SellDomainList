@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:SellDomainApp": "node dist/sell-domain-app/server/server.mjs"
+    "serve:ssr:SellDomainApp": "node dist/sell-domain-app/server/server.mjs",
+    "deploy":"ng build -sm -ec -bh /SellDomainList/  ngh --no-silent"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.0",
+    "bootstrap": "^4.5.0",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

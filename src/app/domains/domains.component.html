@@ -1,0 +1,29 @@
+
+<div class="form-group" style="margin-top: 20px; display: flex; justify-content: flex-end;">
+  <label for="DomainName" style="margin-right: 10px; min-width: 100px;">Domain Name</label>
+  <input #domainName type="text" class="form-control" name="DomainName" style="flex: 1;">
+  <button class="btn btn-primary" style="margin-left: 10px; min-width: 120px;" (click)="searchDomainName(domainName.value); domainName.value=''" >Search</button>
+</div>
+<table class="table table-bordered table-striped">
+<thead>
+  <tr>
+    <th>Domain Name</th>
+    <th>Availability Status</th>
+    <th>Last Control Date</th>
+    <th>Date of Expire</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let d of domains" [class.bg-secondary]="d.avalibilityStatus==false">
+    <td>{{d.domainName}}</td>
+    <td>{{d.avalibilityStatus}}</td>
+    <td>{{d.lastDateOfCheck| date: 'short'}}</td>
+    <td>{{d.dateOfExpire| date: 'short'}}</td>
+    <td>
+      <button class="btn- btn-primary">Edit</button>
+      <button class="btn- btn-danger">Delete</button>
+    </td>
+</tr>
+</tbody>
+</table>
